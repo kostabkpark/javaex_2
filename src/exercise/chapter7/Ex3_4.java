@@ -9,11 +9,11 @@ public class Ex3_4 {
             System.out.println("나이를 비교할 수 없습니다.");
         } else {
             if (p1.compareTo(p2) > 0) {
-                System.out.println(p1.name + "이 나이가 더 많습니다.");
+                System.out.println(p1 + "이 " + p2 + " 보다 나이가 더 많습니다.");
             } else if(p1.compareTo(p2) < 0) {
-                System.out.println(p2.name + "이 나이가 더 많습니다.");
+                System.out.println(p2 + "이 " + p1 + " 보다 나이가 더 많습니다.");
             } else {
-                System.out.println(p1.name + "과 " + p2.name + "은 나이가 같습니다.");
+                System.out.println(p1 + "과 " + p2 + "은 나이가 같습니다.");
             }
         }
     }
@@ -41,5 +41,15 @@ class Person implements Comparable {
             else result = 0;
         }
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Person[" +
+                "이름=\"" + name + '\"' +
+                ", 나이=" + age +
+                ", 키=" + height +
+                ", 몸무게=" + weight +
+                ']';
     }
 }

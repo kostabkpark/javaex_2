@@ -9,11 +9,11 @@ public class Ex3_2 {
             System.out.println("비교할 수 없습니다.");
         } else {
             if(t1.compareTo(t2) > 0) {
-                System.out.println("t1 이 더 큽니다.");
+                System.out.println(t1 + " 이 " + t2 + "보다 더 큽니다.");
             } else if(t1.compareTo(t2) < 0) {
-                System.out.println("t2가 더 큽니다.");
+                System.out.println(t2 + " 이 " + t1 + "보다 더 큽니다.");
             } else {
-                System.out.println("두 삼각형의 넓이가 같습니다.");
+                System.out.println(t1 + " 과 " + t2 + " 두 삼각형의 넓이가 같습니다.");
             }
         }
     }
@@ -43,4 +43,12 @@ class Triangle implements Comparable{
         return (height * width) / (double)2 ;
     }
 
+    @Override
+    public String toString() {
+        return "삼각형[" +
+                "width = " + width +
+                ", height = " + height +
+                ", 넓이 = " + getArea() +
+                ']';
+    }
 }
