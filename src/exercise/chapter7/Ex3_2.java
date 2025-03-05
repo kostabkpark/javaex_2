@@ -1,5 +1,7 @@
 package exercise.chapter7;
 
+import java.util.Arrays;
+
 public class Ex3_2 {
     public static void main(String[] args) {
         Triangle t1 = new Triangle(10,5);
@@ -16,6 +18,16 @@ public class Ex3_2 {
                 System.out.println(t1 + " 과 " + t2 + " 두 삼각형의 넓이가 같습니다.");
             }
         }
+        // 배열에 담아서 정렬전, 정렬, 정렬후 로 확인해보기
+        Triangle[] triangles = {
+                new Triangle(10,20),
+                new Triangle(10,10),
+                new Triangle(10,5),
+                new Triangle(7,8)
+        };
+        System.out.println(Arrays.toString(triangles));
+        Arrays.sort(triangles);
+        System.out.println(Arrays.toString(triangles));
     }
 }
 

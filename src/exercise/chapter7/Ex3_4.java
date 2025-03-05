@@ -1,5 +1,7 @@
 package exercise.chapter7;
 
+import java.util.Arrays;
+
 public class Ex3_4 {
     public static void main(String[] args) {
         Person p1 = new Person("박지성", 40, 175, 68);
@@ -16,6 +18,19 @@ public class Ex3_4 {
                 System.out.println(p1 + "과 " + p2 + "은 나이가 같습니다.");
             }
         }
+        // 배열에 Person 클래스를 담고 정렬하기
+        Person[] persons = {
+                new Person("박지성", 40, 175, 68),
+                new Person("손흥민", 20, 180, 70),
+                new Person("홍길동", 32, 170, 75)
+        };
+
+        Arrays.sort(persons);
+
+        for (Person person : persons) {
+            System.out.println(person);
+        }
+
     }
 }
 

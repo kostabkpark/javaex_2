@@ -1,5 +1,7 @@
 package exercise.chapter7;
 
+import java.util.Arrays;
+
 public class Ex3_3 {
     public static void main(String[] args) {
         Book b1 = new Book(15000);
@@ -11,7 +13,27 @@ public class Ex3_3 {
         } else {
             if(res > 0) {
                 System.out.println(b1 + "이 " + b2 + "보다 비쌉니다.");
+            } else if (res < 0) {
+                System.out.println(b2 + "이 " + b1 + "보다 비쌉니다.");
+            } else {
+                System.out.println(b1 + "과 " + b2 + "는 가격이 같습니다.");
             }
+        }
+
+        // 3개의 Book 객체로 구성된 Book 배열을 사용해 가격 순서대로(오름차순) 정렬한 후 출력하라
+        Book[] books = {
+                new Book(15000),
+                new Book(50000),
+                new Book(20000)
+        };
+        System.out.println("정렬전");
+        for (Book book : books) {
+            System.out.println(book);
+        }
+        Arrays.sort(books);
+        System.out.println("정렬후");
+        for (Book book : books) {
+            System.out.println(book);
         }
     }
 }
