@@ -1,4 +1,4 @@
-package exception_handle;
+package exercise.chapter9;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
