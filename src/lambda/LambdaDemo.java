@@ -9,14 +9,13 @@ public class LambdaDemo {
 //        };
 //        System.out.println(obj.max(3,5)); //==> 5
 
-
         MyFunction m = new MyFunction() {
             @Override
             public int max(int a, int b) {
                 return 0;
             }
         }; // 익명클래스 만드는 문법 7장 34 페이지
-        
+
         MyFunction m2 = (a, b) -> a > b ? a : b;
 
         System.out.println(m.max(3,5)); // ==> 5
@@ -24,17 +23,18 @@ public class LambdaDemo {
     }
 }
 
+@FunctionalInterface
 // 함수형 인터페이스 - 단 하나의 추상 메서드만 가지는 인터페이스
 interface MyFunction {
   public abstract int max(int a, int b);
 }
 
-class A implements MyFunction {
-    @Override
-    public int max(int a, int b) {
-        return 0;
-    }
-}
+//class A implements MyFunction {
+//    @Override
+//    public int max(int a, int b) {
+//        return 0;
+//    }
+//}
 
 //(a,b) -> a > b ? a : b;
 //class AnyObject {
