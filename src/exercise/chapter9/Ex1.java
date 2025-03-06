@@ -21,5 +21,6 @@ class Box<T> {
 
     public void set(T data) {
         this.data = data;
+        return ; // 반환값이 없이 return 만 하는 함수
     }
 }

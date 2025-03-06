@@ -1,9 +1,6 @@
 package exercise.chapter9;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class Ex3 {
     public static void main(String[] args) {
@@ -34,5 +31,19 @@ public class Ex3 {
         int num2 = qi.poll();
         //문자열을 담을 수 있는 Queue 선언
         Queue<String> qs = new LinkedList<>();
+
+        // 숫자를 키로, 문자열을 값으로 가지는 HashMap hm1 을 선언하고 사용해보기
+        HashMap<Integer, String> hm1 = new HashMap<>();
+        hm1.put(1,"아무거나");
+        System.out.println(hm1.get(1));
+        hm1.put(2,"anything");
+        System.out.println(hm1.get(2));
+
+        // 문자열을 키로, 숫자를 값으로 가지는 HashMap hm2 를 선언하고 사용해보기
+        HashMap<String, Integer> hm2 = new HashMap<>();
+        hm2.put("apple", 10);
+        hm2.put("banana", 20);
+        System.out.println(hm2.get("apple"));
+        System.out.println(hm2.get("banana"));
     }
 }
