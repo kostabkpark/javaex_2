@@ -35,6 +35,10 @@ public class Ex3_3 {
         for (Book book : books) {
             System.out.println(book);
         }
+
+        // 내림차순으로 정렬하는 방법 - 함수형 인터페이스와 람다식을 활용하여 !!
+        Arrays.sort(books, (o1, o2)->o2.compareTo(o1));
+        System.out.println(Arrays.toString(books));
     }
 }
 

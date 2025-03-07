@@ -24,13 +24,16 @@ public class Ex3_4 {
                 new Person("손흥민", 20, 180, 70),
                 new Person("홍길동", 32, 170, 75)
         };
-
+        // 오름차순으로 정렬
         Arrays.sort(persons);
-
+        System.out.println("오름차순으로 정렬한 결과");
         for (Person person : persons) {
             System.out.println(person);
         }
-
+        System.out.println("내림차순으로 정렬한 결과");
+        // 내림차순으로 정렬하는 방법 - 함수형 인터페이스와 람다식을 활용하여 !!
+        Arrays.sort(persons, (pi, pj) -> pj.compareTo(pi));
+        System.out.println(Arrays.toString(persons));
     }
 }
 
