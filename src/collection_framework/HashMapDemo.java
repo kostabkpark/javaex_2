@@ -1,5 +1,6 @@
 package collection_framework;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -16,6 +17,16 @@ public class HashMapDemo {
         fruits.put(null, 10);
 
         System.out.println(fruits);
+
+        Collection<Integer> values = fruits.values();
+     //   for (int i = 0; i < values.size(); i++) {
+//            System.out.println(values.get(i)); (X)
+        //    System.out.println(values[i]); (X)
+            //values.remove(30); (O)
+     //   }
+        for (Integer value : values) {
+            System.out.println(value);
+        }
     }
 }
 
@@ -32,7 +43,8 @@ class Fruit {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Fruit fruit)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fruit fruit = (Fruit) o;
         return hashCode() == fruit.hashCode();
     }
 
