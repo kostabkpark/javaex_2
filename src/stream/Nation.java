@@ -3,8 +3,10 @@ package stream;
 import java.util.List;
 
 public class Nation {
-    private final String name; private final Type type;
-    private final double population; private final int gdpRank;
+    private final String name;
+    private final Type type;
+    private final double population;
+    private final int gdpRank;
     public Nation(String name, Type type, double population, int gdpRank) {
         this.name = name; this.type = type;
         this.population = population; this.gdpRank = gdpRank;
@@ -27,4 +29,3 @@ public class Nation {
             new Nation("Morocco", Type.LAND, 33.0, 60)
     );
 }
-
