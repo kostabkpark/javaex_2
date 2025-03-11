@@ -13,16 +13,13 @@ public class OptionalDemo {
             System.out.println(divide.getAsInt());
         }
 
-        Optional<String> result = check("HELLO");
+        Optional<String> result = check(null);
         if(result.isEmpty()) {
-
+            System.out.println("null 문자열입니다.");
         }
-
         if(result.isPresent()) {
             System.out.println(result.get());
         }
-
-
     }
 
     public static OptionalInt divide(int x , int y) {
@@ -30,7 +27,8 @@ public class OptionalDemo {
     }
 
     public static Optional<String> check(String s) {
-        return s == null ? Optional.empty() : Optional.of(s.toLowerCase());
+       //return s == null ? Optional.empty() : Optional.of(s.toLowerCase());
+        return Optional.ofNullable(s);
     }
 
 }
