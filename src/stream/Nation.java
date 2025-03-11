@@ -18,7 +18,8 @@ public class Nation {
     public int getGdpRank() { return gdpRank; }
     public enum Type { LAND, ISLAND }
     public String toString() { return name; }
-    public static  final List<Nation> nations = List.of(
+    public static  final List<Nation> nations =
+            List.of(
             new Nation("ROK", Nation.Type.LAND, 51.4, 11),
             new Nation("New Zealand", Type.ISLAND, 4.5, 49),
             new Nation("USA", Type.LAND, 318.9, 1),
