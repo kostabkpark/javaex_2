@@ -9,7 +9,7 @@ public class DishDemo {
 }
 
 class Dish {
-    private boolean empty;
+    private boolean empty = true;
 
     public boolean isEmpty() {
         return empty;
@@ -28,12 +28,14 @@ class Cook implements Runnable {
     }
 
     private void cook(int i) throws InterruptedException {
-        while(!dish.isEmpty()) {
-            dish.wait();
-        }
-        dish.setEmpty(false);
-        System.out.println(i + "번째 음식이 준비되었습니다.");
-        dish.notify();
+       synchronized (dish) {
+           while(!dish.isEmpty()) {
+               dish.wait();
+           }
+           dish.setEmpty(false);
+           System.out.println(i + "번째 음식이 준비되었습니다.");
+           dish.notify();
+       }
     }
 
     @Override
@@ -55,12 +57,14 @@ class Customer implements Runnable {
         this.dish = dish;
     }
     private void eat(int i) throws InterruptedException {
-        while(dish.isEmpty()) {
-            dish.wait();
+        synchronized (dish) {
+            while(dish.isEmpty()) {
+                dish.wait();
+            }
+            dish.setEmpty(true);
+            System.out.println(i + "번째 음식을 다 먹었습니다.");
+            dish.notify();
         }
-        dish.setEmpty(true);
-        System.out.println(i + "번째 음식을 다 먹었습니다.");
-        dish.notify();
     }
 
     @Override
