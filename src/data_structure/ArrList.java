@@ -1,7 +1,5 @@
 package data_structure;
 
-import java.util.Arrays;
-
 public class ArrList<E> {
     private E[] a; // E a[];
     private int size;
@@ -19,9 +17,13 @@ public class ArrList<E> {
         return a.length;
     }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
     public boolean add(E e){ // 맨 마지막에 추가한다.
         if(a.length == size) {
             // 배열의 사이즈를 2배 증가시킨다. <==== (1. 여기 구현해보기)
+            resize(a.length * 2);
         }
         a[size] = e;
         size++;
@@ -41,34 +43,44 @@ public class ArrList<E> {
     }
 
     public E remove() {
-        if(size > 0) {
-
-            E removed = a[size - 1];
-            a[size - 1] = null;
-            size--;
-
-            if(a.length / 2 > size){
-                // 배열의 크기를 반으로 줄인다.
-                // 기존배열의 값을 새로 만든 배열로 옮긴다.
-                // 기존배열을 없애고 새로만든 배열을 a기 참조한다.
-                // 배열의 사이즈를 2배 증가시킨다. <==== (2. 여기 구현해보기)
-            }
-            return removed;
-        } else {
-            return null;
+        if(isEmpty()) {
+            throw new IndexOutOfBoundsException();
         }
+        E removed = a[size - 1];
+        a[size - 1] = null;
+        size--;
+
+        if(size > 0 && size <= a.length / 4 ){
+            // 배열의 크기를 반으로 줄인다.
+            // 기존배열의 값을 새로 만든 배열로 옮긴다.
+            // 기존배열을 없애고 새로만든 배열을 a기 참조한다.
+            // 배열의 사이즈를 2배 증가시킨다. <==== (2. 여기 구현해보기)
+            resize(a.length / 2);
+        }
+        return removed;
     }
 
     public E peek(int k) {
-        // underflow 방지하도록 코드 변경해야 하나
+        // underflow 방지하도록 코드 변경해야 하나 ,
         // 이번 실습에서는 아주 간단히 구현해보기
+        if(size ==0) {
+            throw new IndexOutOfBoundsException();
+        }
         // <=== 여기 . (3. null 대신 해당하는 element 를 반환하도록 구현하기)
-        return null;
+        return a[k];
     }
 
     @Override
     public String toString() {
-        return "ArrList : " +
-                Arrays.toString(a) ;
+        String list = "";
+        for (int i = 0; i < size ; i++) {
+            if(i == size -1) {
+                list += a[i];
+            } else {
+                list += a[i] + ",";
+            }
+        }
+        return "ArrList : [" +
+                list + "]";
     }
 }
