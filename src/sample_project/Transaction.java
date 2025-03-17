@@ -25,4 +25,15 @@ public class Transaction {
         this.transactionAmount = transactionAmount;
         this.clerk = clerk;
     }
+
+    @Override
+    public String toString() {
+        String trDate = transactionDate.getYear() + "-" + transactionDate.getMonth() + "-" + transactionDate.getDayOfMonth();
+        return "Transaction[" +
+                "업무구분=" + trCode +
+                ", 업무처리일자=" + trDate +
+                ", 처리금액=" + transactionAmount +
+                ", 처리상태=" + trStatus +
+                ']';
+    }
 }

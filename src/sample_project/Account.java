@@ -37,4 +37,14 @@ public class Account {
     public void cancel() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Account[" +
+                "bankCode=" + bankCode +
+                ", 계좌번호=" + accountNo +
+                ", 고객명=" + client.clientName +
+                ", 계좌개설일자=" + openDate +
+                ']';
+    }
 }
