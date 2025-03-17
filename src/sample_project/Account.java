@@ -5,7 +5,8 @@ import java.time.LocalDate;
 public class Account {
     BankCode bankCode;
     String accountNo ; // 5 digits numeric
-    String clientNo ; // 6 digits numeric
+    Client client;
+    //String clientNo ; // 6 digits numeric
     String passwd ; // 4 digits numeric
     LocalDate openDate ;
     LocalDate cancelDate ;
@@ -13,10 +14,10 @@ public class Account {
     long balance ;
 
     public Account(BankCode bankCode, String accountNo,
-                   String clientNo, long balance) {
+                   Client client, long balance) {
         this.bankCode = bankCode;
         this.accountNo = accountNo;
-        this.clientNo = clientNo;
+        this.client = client;
         this.openDate = LocalDate.now(); // 생성
         this.balance = balance;
     }

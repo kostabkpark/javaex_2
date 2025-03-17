@@ -4,14 +4,25 @@ import java.time.LocalDateTime;
 
 public class Transaction {
     BankCode bankCode;
-    String accoutNo;
+    Account account;
+    //String accoutNo;
     TransactionCode trCode;
     LocalDateTime transactionDate;
     long transactionAmount;
-    String clerkNo;
+    BankClerk clerk;
+    //String clerkNo;
     TransactionStatus trStatus;
 
-    public Transaction() {
+    public Transaction(BankCode bankCode,
+                       Account account,
+                       TransactionCode trCode,
+                       long transactionAmount,
+                       BankClerk clerk) {
+        this.bankCode = bankCode;
+        this.account = account;
+        this.trCode = trCode;
         transactionDate = LocalDateTime.now();
+        this.transactionAmount = transactionAmount;
+        this.clerk = clerk;
     }
 }

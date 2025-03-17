@@ -2,10 +2,13 @@ package sample_project;
 
 public class BankClerk {
     BankCode bankCode;
-    String clerkNo;
+    String clerkNo; // 6 digits numeric
     String clerkName;
 
-    public BankClerk() {
-
+    public BankClerk(BankCode bankCode, String clerkNo,
+                     String clerkName) {
+        this.bankCode = bankCode;
+        this.clerkNo = clerkNo;
+        this.clerkName = clerkName;
     }
 }
