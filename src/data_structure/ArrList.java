@@ -60,13 +60,10 @@ public class ArrList<E> {
         return removed;
     }
 
-    public E peek(int k) {
-        // underflow 방지하도록 코드 변경해야 하나 ,
-        // 이번 실습에서는 아주 간단히 구현해보기
-        if(size ==0) {
+    public E get(int k) { // k 번째 항목을 리턴, 단순히 읽기만 하면 된다.
+        if(size ==0) { // underflow 의 경우에 프로그램 정지
             throw new IndexOutOfBoundsException();
         }
-        // <=== 여기 . (3. null 대신 해당하는 element 를 반환하도록 구현하기)
         return a[k];
     }
 

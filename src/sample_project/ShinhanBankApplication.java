@@ -59,8 +59,18 @@ public class ShinhanBankApplication {
                     continue;
                 }
             }
-            System.out.print("계좌개설시 입금하실 금액을 입력하세요 > ");
-            balance = Long.parseLong(in.nextLine());
+
+            while(true) {
+                System.out.print("계좌개설시 입금하실 금액을 입력하세요 > ");
+                balance = Long.parseLong(in.nextLine());
+                System.out.print("입금하려는 금액이 " + balance + "가 맞습니까 ? (Y/N) > ");
+                if(in.nextLine().equalsIgnoreCase("y")) {
+                    break;
+                } else {
+                    continue;
+                }
+            }
+
             account = new Account(BankCode.신한, randomAccNo, client, balance);
             accountMap.put(randomAccNo, account);
             while (true) { // 비밀번호 입력을 정상적으로 했을 때 빠져나오게 하기, 오류 있으면 다시 입력받기

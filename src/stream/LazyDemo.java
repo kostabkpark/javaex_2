@@ -29,4 +29,8 @@ public class LazyDemo {
                 .map(i -> 2 * i) // IntUnaryOperator (i) -> i * 2
                 .forEach(i -> System.out.println(i)); // IntConsumer (x) -> action
     }
+
+    public static void main2(String[] args) {
+        int a = 0;
+    }
 }
