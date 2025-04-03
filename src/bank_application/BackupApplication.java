@@ -1,8 +1,8 @@
-package example;
+package bank_application;
 
 import java.util.Scanner;
 
-public class BankApplication {
+public class BackupApplication {
   public static void main(String[] args) {
     Account[] accounts = new Account[100];
     String header = """

@@ -9,7 +9,7 @@ public class CreateCustomer {
         Connection conn = makeConnection();
         Scanner in = new Scanner(System.in);
         String sql = "insert into customer " +
-             "values (?,?,?,?)";
+            "values (?,?,?,?)";
         String sql1 = "select max(custid) from customer";
         int custid = 0;
         System.out.println("고객 정보를 등록하세요 > ");
@@ -26,17 +26,16 @@ public class CreateCustomer {
         custid = resultSet.getInt(1);
 
         ps = conn.prepareStatement(sql);
-        ps.setInt(1,++custid);
-        ps.setString(2,name);
-        ps.setString(3,address);
-        ps.setString(4,phone);
+        ps.setInt(1, ++custid);
+        ps.setString(2, name);
+        ps.setString(3, address);
+        ps.setString(4, phone);
 
         int rs = ps.executeUpdate();
-        if(rs == 1) {
+        if (rs == 1) {
             System.out.println("정상적으로 등록되었습니다.");
         }
     }
-
 
     private static Connection makeConnection() {
         String url = "jdbc:mysql://localhost:3306/madang?serverTimezone=Asia/Seoul";
